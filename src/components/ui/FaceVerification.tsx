@@ -1,6 +1,6 @@
 import React, { useRef, useState, useCallback, useEffect } from 'react';
 import Webcam from 'react-webcam';
-import { API } from 'aws-amplify';
+import { API } from 'aws-amplify/api';
 
 interface FaceVerificationProps {
   onVerificationComplete: (success: boolean) => void;

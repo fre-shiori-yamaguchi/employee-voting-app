@@ -1,0 +1,77 @@
+2025-05-29T05:45:15.454Z [INFO]: # Build environment configured with Standard build compute type: 8GiB Memory, 4vCPUs, 128GB Disk Space
+2025-05-29T05:45:16.239Z [INFO]: # Cloning repository: git@github.com:fre-shiori-yamaguchi/employee-voting-app.git
+2025-05-29T05:45:17.264Z [INFO]: 
+2025-05-29T05:45:17.265Z [INFO]: Cloning into 'employee-voting-app'...
+2025-05-29T05:45:17.265Z [INFO]: # Switching to commit: ab39b612f4f83e6ac45faa46f66ab26b972de378
+2025-05-29T05:45:17.277Z [INFO]: Note: switching to 'ab39b612f4f83e6ac45faa46f66ab26b972de378'.
+                                 You are in 'detached HEAD' state. You can look around, make experimental
+                                 changes and commit them, and you can discard any commits you make in this
+                                 state without impacting any branches by switching back to a branch.
+                                 If you want to create a new branch to retain commits you create, you may
+                                 do so (now or later) by using -c with the switch command. Example:
+                                 git switch -c <new-branch-name>
+                                 Or undo this operation with:
+                                 git switch -
+                                 Turn off this advice by setting config variable advice.detachedHead to false
+                                 HEAD is now at ab39b61 Add Amplify configuration and fix build issues
+2025-05-29T05:45:17.291Z [INFO]: Successfully cleaned up Git credentials
+2025-05-29T05:45:17.291Z [INFO]: # Checking for Git submodules at: /codebuild/output/src1071448492/src/employee-voting-app/.gitmodules
+2025-05-29T05:45:17.298Z [INFO]: # Retrieving environment cache...
+2025-05-29T05:45:17.348Z [WARNING]: ! Unable to write cache: {"code":"ERR_BAD_REQUEST","message":"Request failed with status code 404"})}
+2025-05-29T05:45:17.349Z [INFO]: ---- Setting Up SSM Secrets ----
+2025-05-29T05:45:17.349Z [INFO]: SSM params {"Path":"/amplify/d623sucmthrvz/main/","WithDecryption":true}
+2025-05-29T05:45:17.406Z [WARNING]: !Failed to set up process.env.secrets
+2025-05-29T05:45:18.223Z [INFO]: # No package override configuration found.
+2025-05-29T05:45:18.227Z [INFO]: # Retrieving cache...
+2025-05-29T05:45:18.269Z [INFO]: # Retrieved cache
+2025-05-29T05:45:23.355Z [INFO]: ## Starting Backend Build
+                                 ## Checking for associated backend environment...
+                                 ## No backend environment association found, continuing...
+                                 ## Completed Backend Build
+2025-05-29T05:45:23.360Z [INFO]: {"backendDuration": 0}
+                                 ## Starting Frontend Build
+                                 # Starting phase: preBuild
+                                 # Executing command: npm ci
+2025-05-29T05:45:52.691Z [INFO]: added 721 packages, and audited 722 packages in 25s
+2025-05-29T05:45:52.699Z [INFO]: 72 packages are looking for funding
+                                 run `npm fund` for details
+2025-05-29T05:45:52.711Z [INFO]: 6 vulnerabilities (1 low, 4 moderate, 1 high)
+                                 To address all issues, run:
+                                 npm audit fix
+                                 Run `npm audit` for details.
+2025-05-29T05:45:52.727Z [INFO]: # Completed phase: preBuild
+                                 # Starting phase: build
+                                 # Executing command: npm run build
+2025-05-29T05:45:52.852Z [INFO]: > employee-voting-app@0.0.0 build
+                                 > vite build
+2025-05-29T05:45:53.561Z [INFO]: vite v5.4.8 building for production...
+2025-05-29T05:45:53.839Z [INFO]: transforming...
+2025-05-29T05:45:53.878Z [WARNING]: Browserslist: caniuse-lite is outdated. Please run:
+                                    npx update-browserslist-db@latest
+                                    Why you should do it regularly: https://github.com/browserslist/update-db#readme
+2025-05-29T05:45:57.123Z [INFO]: ✓ 2415 modules transformed.
+2025-05-29T05:45:57.127Z [WARNING]: x Build failed in 3.54s
+                                    error during build:
+                                    src/components/ui/FaceVerification.tsx (3:9): "API" is not exported by "node_modules/aws-amplify/dist/esm/index.mjs", imported by "src/components/ui/FaceVerification.tsx".
+                                    file: /codebuild/output/src1071448492/src/employee-voting-app/src/components/ui/FaceVerification.tsx:3:9
+                                    1: import React, { useRef, useState, useCallback, useEffect } from 'react';
+                                    2: import Webcam from 'react-webcam';
+                                    3: import { API } from 'aws-amplify';
+                                    ^
+                                    4:
+                                    5: interface FaceVerificationProps {
+                                    at getRollupError (file:///codebuild/output/src1071448492/src/employee-voting-app/node_modules/rollup/dist/es/shared/parseAst.js:395:41)
+                                    at error (file:///codebuild/output/src1071448492/src/employee-voting-app/node_modules/rollup/dist/es/shared/parseAst.js:391:42)
+                                    at Module.error (file:///codebuild/output/src1071448492/src/employee-voting-app/node_modules/rollup/dist/es/shared/node-entry.js:15535:16)
+                                    at Module.traceVariable (file:///codebuild/output/src1071448492/src/employee-voting-app/node_modules/rollup/dist/es/shared/node-entry.js:15984:29)
+                                    at ModuleScope.findVariable (file:///codebuild/output/src1071448492/src/employee-voting-app/node_modules/rollup/dist/es/shared/node-entry.js:13770:39)
+                                    at ReturnValueScope.findVariable (file:///codebuild/output/src1071448492/src/employee-voting-app/node_modules/rollup/dist/es/shared/node-entry.js:5252:38)
+                                    at FunctionBodyScope.findVariable (file:///codebuild/output/src1071448492/src/employee-voting-app/node_modules/rollup/dist/es/shared/node-entry.js:5252:38)
+                                    at ReturnValueScope.findVariable (file:///codebuild/output/src1071448492/src/employee-voting-app/node_modules/rollup/dist/es/shared/node-entry.js:5252:38)
+                                    at FunctionBodyScope.findVariable (file:///codebuild/output/src1071448492/src/employee-voting-app/node_modules/rollup/dist/es/shared/node-entry.js:5252:38)
+                                    at TrackingScope.findVariable (file:///codebuild/output/src1071448492/src/employee-voting-app/node_modules/rollup/dist/es/shared/node-entry.js:5252:38)
+2025-05-29T05:45:57.207Z [ERROR]: !!! Build failed
+2025-05-29T05:45:57.208Z [ERROR]: !!! Error: Command failed with exit code 1
+2025-05-29T05:45:57.208Z [INFO]: # Starting environment caching...
+2025-05-29T05:45:57.208Z [INFO]: # Environment caching completed
+
