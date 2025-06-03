@@ -1,6 +1,6 @@
 import React, { useRef, useState, useCallback, useEffect } from 'react';
 import Webcam from 'react-webcam';
-import { API } from 'aws-amplify/api';
+import { Amplify } from 'aws-amplify';
 
 interface FaceVerificationProps {
   onVerificationComplete: (success: boolean) => void;
@@ -37,7 +37,7 @@ const FaceVerification: React.FC<FaceVerificationProps> = ({ onVerificationCompl
         const base64Data = imageSrc.split(',')[1];
 
         // APIを呼び出して顔認証を実行
-        const response = await API.post('rekognition', '/verify-face', {
+        const response = await Amplify.API.post('rekognition', '/verify-face', {
           body: {
             image: base64Data
           }
@@ -85,4 +85,4 @@ const FaceVerification: React.FC<FaceVerificationProps> = ({ onVerificationCompl
   );
 };
 
-export default FaceVerification; 
+export default FaceVerification;
